@@ -31,7 +31,7 @@ type ExtStartConfig = StarConfig & { startScale: number };
     </section>
   `,
   standalone: true,
-  imports: [StageComponent, CoreShapeComponent, NgForOf, NgIf],
+  imports: [StageComponent, CoreShapeComponent, NgForOf],
 })
 export class StarExampleComponent implements OnInit {
   @ViewChild('layer') layer: CoreShapeComponent;
@@ -48,7 +48,7 @@ export class StarExampleComponent implements OnInit {
 
   public handleDragstart(
     event: NgKonvaEventObject<MouseEvent>,
-    config: ExtStartConfig
+    config: ExtStartConfig,
   ): void {
     const shape = event.angularComponent.getStage();
     const dragLayer = this.dragLayer.getStage();
@@ -72,7 +72,7 @@ export class StarExampleComponent implements OnInit {
 
   public handleDragend(
     event: NgKonvaEventObject<MouseEvent>,
-    config: ExtStartConfig
+    config: ExtStartConfig,
   ): void {
     const shape = event.angularComponent.getStage();
     const layer = this.layer.getStage();
